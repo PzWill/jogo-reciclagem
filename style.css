@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin: 10px;
+}
+
+#fase {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#fase h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+#titulo-fase {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin: 10px 0;
+}
+
+.objeto {
+    position: absolute;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.5s;
+}
+
+.objeto:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste para imagens responsivas */
+.objeto img {
+    width: 10vw; /* Ajusta a largura para 10% da largura da tela */
+    max-width: 80px; /* Define um tamanho máximo para telas maiores */
+    height: auto; /* Mantém a proporção da imagem */
+    transition: transform 0.2s, opacity 0.5s;
+}
+
+.hud {
+    margin: 10px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dialogo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    z-index: 999;
+    max-width: 90vw;
+}
+
+.feedback {
+    font-weight: bold;
+    margin: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.acerto {
+    color: green;
+}
+
+.erro {
+    color: red;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+#pular, #reiniciar {
+    margin: 10px;
+    background-color: #3498db;
+}
+
+#pular:hover, #reiniciar:hover {
+    background-color: #2980b9;
+}
+
+#introducao,
+#fimdejogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 20px;
+}
+
+#explicacao {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .objeto img {
+        width: 15vw; /* Aumenta a largura relativa para telas menores */
+        max-width: 60px; /* Reduz o tamanho máximo */
+    }
+
+    .hud {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .objeto img {
+        width: 20vw; /* Aumenta ainda mais a largura relativa para telas muito pequenas */
+        max-width: 50px; /* Reduz ainda mais o tamanho máximo */
+    }
+}
