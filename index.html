@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo do Descarte Sustentável</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="introducao">
+        <h1>♻️ Jogo do Descarte Sustentável</h1>
+        <p>Aprenda a descartar resíduos corretamente e ajude a preservar o meio ambiente!</p>
+        <button onclick="iniciarJogo()">Começar o jogo</button>
+    </div>
+
+    <div id="jogo" style="display: none;">
+        <h1>♻️ Descarte Sustentável</h1>
+        <h2 id="titulo-fase"></h2>
+        <div class="hud">
+            <span>Pontuação: <span id="pontuacao">0</span></span> |
+            <span>Vidas: <span id="vidas">5</span> ❤️</span> |
+            <span>Fase: <span id="numero-fase">1</span>/4</span>
+            <div class="progresso-container">
+                <div id="progresso"></div>
+            </div>
+        </div>
+
+        <div id="fase"></div>
+        <div id="feedback" class="feedback"></div>
+        <div id="controles">
+            <button id="dica" onclick="mostrarDica()">💡 Dica (<span id="dicas-restantes">3</span>)</button>
+            <button id="pular" onclick="pularFase()" disabled>⏭️ Pular</button>
+            <button id="reiniciar" onclick="reiniciarFase()">🔄 Reiniciar</button>
+        </div>
+    </div>
+    
+    <div id="fimdejogo" style="display:none;"></div>
+
+    <script src="fases.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #2c3e50;
+}
+
+h1, h2 {
+    margin: 10px;
+    color: #27ae60;
+}
+
+#fase {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px auto;
+    background-color: #fff;
+}
+
+.objeto {
+    position: absolute;
+    /* tamanho responsivo: mínimo 50px, ideal 6vw, máximo 100px */
+    width: clamp(50px, 6vw, 100px);
+    height: clamp(50px, 6vw, 100px);
+    padding: 5px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.objeto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hud {
+    margin: 10px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.dialogo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 999;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.feedback {
+    font-weight: bold;
+    margin: 15px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.acerto {
+    color: #27ae60;
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+.erro {
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+#pular, #reiniciar {
+    background-color: #3498db;
+}
+
+#dica {
+    background-color: #f39c12;
+}
+
+.progresso-container {
+    width: 200px;
+    height: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progresso {
+    height: 100%;
+    background-color: #2ecc71;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.stats {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.stats-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .objeto {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .dialogo {
+        width: 90%;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+#fimdejogo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;             /* o JS muda para flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  #fimdejogo .modal-fim {
+    background: #fff;
+    padding: clamp(1rem, 5vw, 2rem);
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: clamp(300px, 80%, 400px);
+  }
+  
+  #fimdejogo .modal-fim h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #27ae60;
+  }
+  
+  #fimdejogo .modal-fim p {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+  
+  #fimdejogo .modal-fim button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #fimdejogo .modal-fim button:hover {
+    background-color: #27ae60;
+  }
